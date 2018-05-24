@@ -8,10 +8,14 @@ namespace Tree
         static void Main(string[] args)
         {
             var minHeapTree = new HeapTree();
+            var bstTree = new BinarySearchTree();
 
             List<int> items = new List<int>{12, 22, 33, 45, 67, 231, 90, 0, 77};
 
-            items.ForEach(item => minHeapTree.AddNode(item));
+            items.ForEach(item => {
+                minHeapTree.AddNode(item);
+                bstTree.AddNode(item);
+            });
 
             Console.WriteLine(string.Join(",", minHeapTree.Items));
 
@@ -22,6 +26,9 @@ namespace Tree
             minHeapTree.AddNode(2);
 
             Console.WriteLine(string.Join(",", minHeapTree.Items));
+
+            Console.WriteLine("Print Binary Search Tree:");
+            bstTree.TreeTraversal();
         }
     }
 }
