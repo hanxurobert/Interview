@@ -13,9 +13,36 @@ namespace Tree {
             }
         }
 
-        public void TreeTraversal() {
-            visitNode(Root);
+        public void InOrderTraversal(Node node) {
+            if (node.LeftNode != null) {
+                InOrderTraversal(node.LeftNode);
+            }
+            visitNode(node);
+            if (node.RightNode != null) {
+                InOrderTraversal(node.RightNode);
+            }
         }
+
+        public void PreOrderTraversal(Node node) {
+            visitNode(node);
+            if (node.LeftNode != null) {
+                PreOrderTraversal(node.LeftNode);
+            }
+            if (node.RightNode != null) {
+                PreOrderTraversal(node.RightNode);
+            }
+        }
+
+        public void PostOrderTraversal(Node node) {
+            if (node.LeftNode != null) {
+                PostOrderTraversal(node.LeftNode);
+            }
+            if (node.RightNode != null) {
+                PostOrderTraversal(node.RightNode);
+            }
+            visitNode(node);
+        }
+
 
         private void setNodeValue(Node node, int nodeValue) {
             if (node.Data <= nodeValue) {
@@ -34,13 +61,7 @@ namespace Tree {
         }
 
         private void visitNode(Node node) {
-            if (node.LeftNode != null) {
-                visitNode(node.LeftNode);
-            }
             Console.WriteLine(node.Data);
-            if (node.RightNode != null) {
-                visitNode(node.RightNode);
-            }
         }
     }
 

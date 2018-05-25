@@ -27,8 +27,14 @@ namespace Tree
 
             Console.WriteLine(string.Join(",", minHeapTree.Items));
 
-            Console.WriteLine("Print Binary Search Tree:");
-            bstTree.TreeTraversal();
+            Console.WriteLine("Print Binary Search Tree (In Order):");
+            bstTree.InOrderTraversal(bstTree.Root);
+
+            Console.WriteLine("Print Binary Search Tree (Pre Order):");
+            bstTree.PreOrderTraversal(bstTree.Root);
+
+            Console.WriteLine("Print Binary Search Tree (Post Order):");
+            bstTree.PostOrderTraversal(bstTree.Root);
         }
     }
 }
