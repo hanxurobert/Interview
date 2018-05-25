@@ -35,6 +35,14 @@ namespace Tree
 
             Console.WriteLine("Print Binary Search Tree (Post Order):");
             bstTree.PostOrderTraversal(bstTree.Root);
+
+            string[] dictionary  = new string[] { "robert", "rober", "roberthan", "rob", "pig", "dock" };
+            var trieTree = new TrieTree();
+            foreach(var s in dictionary) {
+                trieTree.Add(s);
+            }
+            Console.WriteLine("Print Trie Tree:");
+            Console.WriteLine(trieTree.FindCount("robe"));
         }
     }
 }
